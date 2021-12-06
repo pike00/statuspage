@@ -1,8 +1,9 @@
 import datetime
-
 import requests
-
 import json
+import os
+
+
 
 sites = []
 
@@ -19,6 +20,10 @@ print("Checking Sites: ")
 
 for site in sites:
     filename = f"logs/{site}_report.log"
+    # Create file if it doesn't exist
+    if not os.path.exists(filename):
+        os.mknod(filename)
+
     print(f"\t{site}...", end="")
     req = requests.get(sites[site], timeout=10)
 
