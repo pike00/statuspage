@@ -32,7 +32,7 @@ for site in sites:
 
     with open(filename, 'a+') as log_file:
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-        log_file.writelines(f"{now},{status}")
+        log_file.writelines(f"{now},{status}\n")
 
 
 print(now)
