@@ -22,7 +22,7 @@ jobs:
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run Uptime Checker
-        run: python my_script.py
+        run: python run.py
       - name: Commit + Push
         uses: actions-x/commit@v2
         with:
