@@ -28,4 +28,5 @@ jobs:
         with:
           name: Will Pike
           email: willpike00@gmail.com
+          files: logs
           message: Automatically Updated log with github actions
