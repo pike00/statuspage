@@ -14,3 +14,9 @@ jobs:
       - name: Run Shell Script
         id: shell_script_run
         run: bash ./health-check.sh
+      - name: push
+        uses: actions-x/commit@v2
+        with:
+          name: Will Pike
+          email: willpike00@gmail.commit
+          message: Automatically Updated log with github actions
