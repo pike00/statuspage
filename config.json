@@ -1,7 +1,16 @@
 {
-  "sites": {
-    "Google": "https://google.com",
-    "Reddit": "https://reddit.com",
-    "Healthchecks": "https://health.pike00.com"
-  }
+  "sites": [
+    {
+      "name": "Google",
+      "url": "https://google.com"
+    },
+    {
+      "name": "Healthchecks",
+      "url": "https://health.pike00.com"
+    },
+    {
+      "name": "CV",
+      "url": "https://pike00.com"
+    }
+  ]
 }

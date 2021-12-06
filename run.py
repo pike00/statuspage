@@ -18,13 +18,12 @@ print("Done\n\n")
 print("Checking Sites: ")
 
 for site in sites:
-    filename = f"logs/{site}_report.log"
-    # Create file if it doesn't exist
-    if not os.path.exists(filename):
-        os.mknod(filename)
+    name = site['name']
+    url = site['url']
+    filename = f"logs/{name}_report.log"
 
-    print(f"\t{site}...", end="")
-    req = requests.get(sites[site], timeout=10)
+    print(f"\t{name}...", end="")
+    req = requests.get(url, timeout=10)
 
     status = ""
     if req.ok:
@@ -38,11 +37,3 @@ for site in sites:
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
         log_file.writelines(f"{now},{status}\n")
 
-
-print(now)
-
-
-
-  # if [[ $commit == true ]]
-  # then
-  #   echo $dateTime, $result >> "logs/${key}_report.log"

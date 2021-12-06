@@ -237,16 +237,12 @@ function hideTooltip() {
 }
 
 async function genAllReports() {
-  const response = await fetch("urls.cfg");
-  const configText = await response.text();
-  const configLines = configText.split("\n");
-  for (let ii = 0; ii < configLines.length; ii++) {
-    const configLine = configLines[ii];
-    const [key, url] = configLine.split("=");
-    if (!key || !url) {
-      continue;
-    }
+  const response = await fetch("config.json");
+  const sites = JSON.parse(await response.text())['sites'];
 
+  for (let site of sites){
+    let key = site['name']
+    let url = site['url']
     await genReportLog(document.getElementById("reports"), key, url);
   }
 }
