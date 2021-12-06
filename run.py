@@ -3,10 +3,9 @@ import requests
 import json
 import os
 
-
-
 sites = []
 
+os.makedirs("logs",exist_ok=True)
 
 print("Loading sites...", end="")
 with open("config.json") as json_data_file:
