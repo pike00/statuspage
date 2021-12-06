@@ -11,12 +11,18 @@ jobs:
     name: Check all sites
     steps:
       - uses: actions/checkout@v2
-      - name: Run Shell Script
-        id: shell_script_run
-        run: bash ./health-check.sh
-      - name: push
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run Uptime Checker
+        run: python my_script.py
+      - name: Commit + Push
         uses: actions-x/commit@v2
         with:
           name: Will Pike
-          email: willpike00@gmail.commit
+          email: willpike00@gmail.com
           message: Automatically Updated log with github actions
