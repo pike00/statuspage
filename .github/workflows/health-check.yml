@@ -14,7 +14,8 @@ jobs:
     name: Check all sites
     steps:
       - uses: actions/checkout@v2
-        ref: updates
+        with:
+          ref: updates
       - uses: actions/setup-python@v2
         with:
           python-version: '3.9'
